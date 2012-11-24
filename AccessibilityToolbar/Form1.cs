@@ -25,7 +25,9 @@ namespace AccessibilityToolbar
 
         public Form1()
         {
+            //When the overlay is closed uncheck the overlay button-----------------
             overlay.FormClosing += new FormClosingEventHandler(uncheckContrast);
+            //Apply settings on the toolbar when they get changed--------------------
             Properties.Settings.Default.PropertyChanged +=new PropertyChangedEventHandler(settingsChanged);
             InitializeComponent();
         }
@@ -62,7 +64,7 @@ namespace AccessibilityToolbar
         }
 
         private void uncheckMagnifier(Object sender, FormClosingEventArgs e)
-        {
+        {//called when the magnifier is closed form an external actor
             magnifierButton.Checked = false;
         }
 
@@ -94,7 +96,7 @@ namespace AccessibilityToolbar
         private delegate void uncheck(Object sender, EventArgs ev);
 
         private void uncheckKeyboard(Object sender, EventArgs e)
-        {
+        {//called when the on-screen keyboard is closed form an external actor
             if (keyboardButton.InvokeRequired)
             {
                 uncheck u = new uncheck(uncheckKeyboard);
@@ -136,7 +138,7 @@ namespace AccessibilityToolbar
         }
 
         private void uncheckContrast(Object sender, FormClosingEventArgs e)
-        {
+        {//called when the overlay is closed form an external actor
             contrastButton.Checked = false;
         }
 
@@ -166,7 +168,7 @@ namespace AccessibilityToolbar
         }
 
         private void uncheckNarrator(Object sender, EventArgs e)
-        {
+        {//called when the narrator is closed form an external actor
             if (narratorButton.InvokeRequired)
             {
                 uncheck u = new uncheck(uncheckNarrator);
@@ -193,6 +195,7 @@ namespace AccessibilityToolbar
             }
 
             TopMost = Properties.Settings.Default.alwaysOnTop;
+            
         }
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)

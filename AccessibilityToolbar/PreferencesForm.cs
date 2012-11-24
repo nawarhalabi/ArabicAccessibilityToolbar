@@ -44,7 +44,7 @@ namespace AccessibilityToolbar
         static extern bool SystemParametersInfo(uint uiAction, uint uiParam, IntPtr pvParam, uint fWinIni);
 
         private void applySettings()
-        {
+        {//apply stored settings on the preferences window-----------------------------------
             TopMost = Properties.Settings.Default.alwaysOnTop;
             string cul = Properties.Settings.Default.culture;
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo(Properties.Settings.Default.culture));
@@ -116,11 +116,13 @@ namespace AccessibilityToolbar
 
         private void chooseColourButton_Click(object sender, EventArgs e)
         {
+            //Create a colorwheel dialog and set its initial selected color to the current selected color-----------------------------------
             ColorChooserCSharp.ColorChooser1 chooser = new ColorChooserCSharp.ColorChooser1();
             chooser.TopMost = Properties.Settings.Default.alwaysOnTop;
             chooser.RGB = new ColorHandler.RGB((int)red, (int)green, (int)blue);
-            chooser.Invalidate();
             chooser.ShowDialog();
+
+            //Get colour results form the dialog and save them in the state and update the colour panel
             if (chooser.saveChanges)
             {
                 green = chooser.RGBOUT.Green;
@@ -135,10 +137,13 @@ namespace AccessibilityToolbar
         {
             if (d.SelectedItem != null)
             {
+                //Get the selected colour-----------
                 Color color = ((listItem)d.SelectedItem).color;
+                //Store the state-------------------
                 red = color.R;
                 green = color.G;
                 blue = color.B;
+                //update the color panel------------
                 panel1.BackColor = Color.FromArgb(255, red, green, blue);
             }
         }
@@ -158,6 +163,11 @@ namespace AccessibilityToolbar
             item = new listItem { name = "برتقالي", color = Color.Orange };
             d.Items.Add(item);
             d.DisplayMember = "name";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

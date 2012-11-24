@@ -140,6 +140,7 @@
     <EmbeddedResource Include="colours.ar.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>colours.ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReadingRuler.resx">
       <DependentUpon>ReadingRuler.cs</DependentUpon>

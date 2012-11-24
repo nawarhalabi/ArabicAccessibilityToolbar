@@ -92,6 +92,15 @@ namespace Karna.Magnification
         
         public const string WC_MAGNIFIER = "Magnifier";
 
+        [DllImport("user32.dll")]
+        public static extern int FindWindow(string lpClassName, string lpWindowName);
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
+        public const int WM_SYSCOMMAND = 0x0112;
+        public const int SC_CLOSE = 0xF060;
+
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern int GetSystemMetrics(int nIndex);
 
@@ -172,5 +181,10 @@ namespace Karna.Magnification
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
         public static extern int SetWindowLong(IntPtr hWnd, int index, int val);
+
+        [DllImport("Magnification.dll", CallingConvention = CallingConvention.StdCall)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool MagShowSystemCursor([MarshalAs(UnmanagedType.Bool)]bool fShowCursor);
+        
     }
 }

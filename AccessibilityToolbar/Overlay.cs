@@ -23,21 +23,25 @@ namespace AccessibilityToolbar
         }
 
         private void applySettings()
-        {
+        {//apply selected settings on the overlay --------------------------------
             IntPtr desktop = GetDesktopWindow();
             SetParent(Handle, desktop);
-
+            //Get the primary screen rectangle--------------------------------------
             Rectangle s = Screen.PrimaryScreen.Bounds;
-
+            //set the size of the overlay to the size of the screen--------------
             Size = s.Size;
+            //Set the start position to be manual at the top-left corner-----------
+            StartPosition = FormStartPosition.Manual;
             Location = new Point(0, 0);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             TopMost = true;
 
+            //Overlay must be click-throughable ------------------------------------
             int initialStyle = GetWindowLong(Handle, -20);
             SetWindowLong(Handle, -20, initialStyle | 0x80000 | 0x20);
-
+            //Set the overlay color-------------------------------------------------
             BackColor = Color.FromArgb(Properties.Settings.Default.overlayR, Properties.Settings.Default.overlayG, Properties.Settings.Default.overlayB);
+            //Set the opacity of the overlay to 140 .... any suggestions???
             SetLayeredWindowAttributes(Handle, 0, 140, LayeredWindowAttributeFlags.LWA_ALPHA);
 
         }
@@ -46,7 +50,7 @@ namespace AccessibilityToolbar
         {
             applySettings();
         }
-
+        //Native methods needed-------------------------------------------------------------
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         static extern int GetWindowLong(IntPtr hWnd, int index);
 

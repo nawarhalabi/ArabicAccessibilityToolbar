@@ -16,11 +16,13 @@ namespace Karna.Magnification
         private RECT magWindowRect = new RECT();
         private System.Windows.Forms.Timer timer;
         public bool isLens;
+        private bool oldIsLens;
         int initialStyle;
 
         public Magnifier(Form form, bool isLens)
         {
             this.isLens = isLens;
+            oldIsLens = isLens;//Used to track changes of the isLens variable because changing the cursor settings of the magnifier requiers recreating the magnifier
 
             if (form == null)
                 throw new ArgumentNullException("form");
@@ -42,6 +44,18 @@ namespace Karna.Magnification
             }
         }
 
+        public void recreateSelf()
+        {
+            //Used to apply the changed settings on the magnifier which can only happen if the magnifier is recreated
+            RemoveMagnifier();//Remove the magnifier objects by calling windows api
+            NativeMethods.SendMessage(hwndMag, NativeMethods.WM_SYSCOMMAND, NativeMethods.SC_CLOSE, 0);//close the inner magnifier window
+            initialized = NativeMethods.MagInitialize();//Initialize the magnifier again by calling windows api
+            if(initialized)
+            {
+                SetupMagnifier();//apply settings
+            }
+        }
+
         void form_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer.Enabled = false;
@@ -49,6 +63,11 @@ namespace Karna.Magnification
 
         void timer_Tick(object sender, EventArgs e)
         {
+            if (oldIsLens != isLens)// If isLens changes
+            {
+                recreateSelf(); // Recreate the magnifier to apply the change
+                oldIsLens = isLens;
+            }
             UpdateMaginifier();
         }
 
@@ -125,40 +144,21 @@ namespace Karna.Magnification
                 return;
             }
 
-
             // Set the source rectangle for the magnifier control.
             NativeMethods.MagSetWindowSource(hwndMag, sourceRect);
 
             // Reclaim topmost status, to prevent unmagnified menus from remaining in view. 
-            if (isLens)
+            if (isLens)// If the magnifier is a lens let it follow the cursor and stay on top
             {
                 POINT mouse = new POINT();
                 NativeMethods.GetCursorPos(ref mouse);
 
-                /*if (mouse.x - magnification * width / 2 < 0)
-                {
-                    mouse.x = (int)(magnification * width / 2);
-                }
-                if (mouse.x + magnification * width / 2 > NativeMethods.GetSystemMetrics(NativeMethods.SM_CXSCREEN))
-                {
-                    mouse.x = NativeMethods.GetSystemMetrics(NativeMethods.SM_CXSCREEN) - (int)(magnification * width / 2);
-                }
-
-                if (mouse.y - magnification * height / 2 < 0)
-                {
-                    mouse.y = (int)(magnification * height / 2);
-                }
-                if (mouse.y > NativeMethods.GetSystemMetrics(NativeMethods.SM_CYSCREEN) - magnification * height / 2)
-                {
-                    mouse.y = NativeMethods.GetSystemMetrics(NativeMethods.SM_CYSCREEN) - (int)(magnification * height / 2);
-                }*/
-
                 NativeMethods.SetWindowPos(form.Handle, NativeMethods.HWND_TOPMOST, mouse.x - (int)(magnification * width / 2), mouse.y - (int)(magnification * height / 2), width, height,
                 (int)SetWindowPosFlags.SWP_NOACTIVATE | (int)SetWindowPosFlags.SWP_NOSIZE);
             }
-            else
-             NativeMethods.SetWindowPos(form.Handle, new IntPtr(-1)/*NativeMethods.HWND_TOPMOST*/, 0, 0, 0, 0,
-                (int)SetWindowPosFlags.SWP_NOACTIVATE | (int)SetWindowPosFlags.SWP_NOMOVE | (int)SetWindowPosFlags.SWP_NOSIZE);
+            else// if the magnifier is not a lens don't move it and keep it on top of all non-topmost windows
+             NativeMethods.SetWindowPos(form.Handle, new IntPtr(0), 0, 0, 0, 0,
+                (int)SetWindowPosFlags.SWP_NOACTIVATE | (int)SetWindowPosFlags.SWP_NOZORDER | (int)SetWindowPosFlags.SWP_NOMOVE | (int)SetWindowPosFlags.SWP_NOSIZE);
             
             // Force redraw.
             NativeMethods.InvalidateRect(hwndMag, IntPtr.Zero, true);
@@ -185,7 +185,7 @@ namespace Karna.Magnification
             NativeMethods.MagSetWindowTransform(hwndMag, ref matrix);
         }
 
-        protected void SetupMagnifier()
+        private void SetupMagnifier()
         {
             if (!initialized)
                 return;
@@ -195,21 +195,30 @@ namespace Karna.Magnification
             hInst = NativeMethods.GetModuleHandle(null);
 
             // Make the window opaque.
-            form.AllowTransparency = true;
-            form.TransparencyKey = Color.Empty;
-            form.Opacity = 255;
+            //form.AllowTransparency = true;
+            //form.TransparencyKey = Color.Empty;
+            //form.Opacity = 255;
 
             // Create a magnifier control that fills the client area.
             NativeMethods.GetClientRect(form.Handle, ref magWindowRect);
+            if (isLens)// if the magnifier is a lens don't show magnifier cursor
+            {
+                hwndMag = NativeMethods.CreateWindow((int)ExtendedWindowStyles.WS_EX_CLIENTEDGE, NativeMethods.WC_MAGNIFIER,
+                    "MagnifierWindow", (int)WindowStyles.WS_CHILD |
+                    (int)WindowStyles.WS_VISIBLE,
+                    magWindowRect.left, magWindowRect.top, magWindowRect.right, magWindowRect.bottom, form.Handle, IntPtr.Zero, hInst, IntPtr.Zero);
+            }
+            else// if the magnifier is not a lens show the maginified cursor
+            {
+                hwndMag = NativeMethods.CreateWindow((int)ExtendedWindowStyles.WS_EX_CLIENTEDGE, NativeMethods.WC_MAGNIFIER,
+                    "MagnifierWindow", (int)WindowStyles.WS_CHILD | (int)MagnifierStyle.MS_SHOWMAGNIFIEDCURSOR |
+                    (int)WindowStyles.WS_VISIBLE,
+                    magWindowRect.left, magWindowRect.top, magWindowRect.right, magWindowRect.bottom, form.Handle, IntPtr.Zero, hInst, IntPtr.Zero);
+            }
 
-            hwndMag = NativeMethods.CreateWindow((int)ExtendedWindowStyles.WS_EX_CLIENTEDGE, NativeMethods.WC_MAGNIFIER,
-                "MagnifierWindow", (int)WindowStyles.WS_CHILD |
-                (int)WindowStyles.WS_VISIBLE,
-                magWindowRect.left, magWindowRect.top, magWindowRect.right, magWindowRect.bottom, form.Handle, IntPtr.Zero, hInst, IntPtr.Zero);
-
-            initialStyle = NativeMethods.GetWindowLong(hwndMag, -20);
-            NativeMethods.SetWindowLong(hwndMag, -20, initialStyle | 0x80000 | 0x20);
-            NativeMethods.SetLayeredWindowAttributes(hwndMag, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
+            //initialStyle = NativeMethods.GetWindowLong(hwndMag, -20);
+            //NativeMethods.SetWindowLong(hwndMag, -20, initialStyle | 0x80000 | 0x20);
+            //NativeMethods.SetLayeredWindowAttributes(hwndMag, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
 
             if (hwndMag == IntPtr.Zero)
             {
@@ -221,7 +230,7 @@ namespace Karna.Magnification
             NativeMethods.MagSetWindowTransform(hwndMag, ref matrix);
         }
 
-        protected void RemoveMagnifier()
+        public void RemoveMagnifier()
         {
             if (initialized)
                 NativeMethods.MagUninitialize();
@@ -233,7 +242,9 @@ namespace Karna.Magnification
             if (disposing)
                 timer.Dispose();
             timer = null;
-            form.Resize -= form_Resize;
+            form.Resize -= form_Resize; 
+            this.form.FormClosing -= new FormClosingEventHandler(form_FormClosing);
+            
             RemoveMagnifier();
         }
 

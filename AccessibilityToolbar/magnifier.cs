@@ -18,7 +18,11 @@ namespace AccessibilityToolbar
         {
             InitializeComponent();
         }
-
+        //Native functions needed---------------------------------------------------------------
+        [DllImport("Magnification.dll", CallingConvention = CallingConvention.ThisCall, EntryPoint = "MagShowSystemCursor")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool MagShowSystemCursor([MarshalAs(UnmanagedType.Bool)]bool fShowCursor);
+        
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         static extern int GetWindowLong(IntPtr hWnd, int index);
 
@@ -30,7 +34,7 @@ namespace AccessibilityToolbar
         public static extern bool SetLayeredWindowAttributes(IntPtr hwnd, int crKey, byte bAlpha, LayeredWindowAttributeFlags dwFlags);
         [FlagsAttribute]
         [Description("Layered window flags")]
-
+        //-----------------------------------------------------------------------------------------
         public enum LayeredWindowAttributeFlags : int
         {
             /// <summary>
@@ -48,9 +52,11 @@ namespace AccessibilityToolbar
             //Don't let the magnifier grow very large------------------------------------
             Rectangle r = Screen.PrimaryScreen.Bounds;
             MaximumSize = new Size((int)(r.Width*0.75), (int)(r.Height * 0.75));
-
+            //Store the default style because it might be needed later to reset the settings
             defaultStyle = GetWindowLong(Handle, -20);
+            //Apply settings when they change -------------------------------------------
             Properties.Settings.Default.PropertyChanged += new PropertyChangedEventHandler(settingsChanged);
+            //Apply settings now for the first time -------------------------------------
             applySettings();
         }
 
@@ -65,17 +71,16 @@ namespace AccessibilityToolbar
             Size = new Size(Properties.Settings.Default.maxMagnifierWidth, Properties.Settings.Default.maxMagnifierHeight);
             TopMost = Properties.Settings.Default.alwaysOnTop;
 
-            if (Properties.Settings.Default.isLens)
+            if (Properties.Settings.Default.isLens)//If the magnifier is a lens make click-throughable
             {
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 SetWindowLong(this.Handle, -20, defaultStyle | 0x80000 | 0x20);
                 SetLayeredWindowAttributes(Handle, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
             }
             else
-            {
-                SetWindowLong(Handle, -20, defaultStyle);
+            {  //Otherwise, render it as toolwindow that is not click-throughable
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-                SetLayeredWindowAttributes(Handle, 0, 0, LayeredWindowAttributeFlags.LWA_ALPHA);
+                SetWindowLong(Handle, -20, defaultStyle);
             }
         }
 

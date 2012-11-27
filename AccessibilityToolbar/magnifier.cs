@@ -74,13 +74,15 @@ namespace AccessibilityToolbar
             if (Properties.Settings.Default.isLens)//If the magnifier is a lens make click-throughable
             {
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                SetWindowLong(this.Handle, -20, defaultStyle | 0x80000 | 0x20);
+                SetWindowLong(this.Handle, -20, defaultStyle | 0x80000 | 0x20);//Layered and transparent
                 SetLayeredWindowAttributes(Handle, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
             }
             else
             {  //Otherwise, render it as toolwindow that is not click-throughable
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-                SetWindowLong(Handle, -20, defaultStyle);
+                SetWindowLong(this.Handle, -20, defaultStyle | 0x80000 /*| 0x20*/);//Layered but not transparent
+                //SetWindowLong(Handle, -20, defaultStyle);
+                SetLayeredWindowAttributes(Handle, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
             }
         }
 

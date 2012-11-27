@@ -23,24 +23,28 @@ namespace Karna.Magnification
         {
             this.isLens = isLens;
             oldIsLens = isLens;//Used to track changes of the isLens variable because changing the cursor settings of the magnifier requiers recreating the magnifier
+            magnification = 2.0f;
+            this.form = form;
 
             if (form == null)
                 throw new ArgumentNullException("form");
-
-            magnification = 2.0f;
-            this.form = form;
-            this.form.Resize += new EventHandler(form_Resize);
-            this.form.FormClosing += new FormClosingEventHandler(form_FormClosing);
-            timer = new Timer();
-            timer.Tick += new EventHandler(timer_Tick);
 
             initialized = NativeMethods.MagInitialize();
             if (initialized)
             {
                 SetupMagnifier();
-                UpdateMaginifier();
+                //UpdateMaginifier();
+
+                this.form.Resize += new EventHandler(form_Resize);
+                this.form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+                timer = new Timer();
+                timer.Tick += new EventHandler(timer_Tick);
                 timer.Interval = NativeMethods.USER_TIMER_MINIMUM;
                 timer.Enabled = true;
+            }
+            else
+            {
+                form.Close();
             }
         }
 
@@ -108,7 +112,6 @@ namespace Karna.Magnification
             sourceRect.left = mousePoint.x - width / 2;
             sourceRect.top = mousePoint.y - height / 2;
 
-
             // Don't scroll outside desktop area.
             if (!isLens)
             {
@@ -158,7 +161,7 @@ namespace Karna.Magnification
             }
             else// if the magnifier is not a lens don't move it and keep it on top of all non-topmost windows
              NativeMethods.SetWindowPos(form.Handle, new IntPtr(0), 0, 0, 0, 0,
-                (int)SetWindowPosFlags.SWP_NOACTIVATE | (int)SetWindowPosFlags.SWP_NOZORDER | (int)SetWindowPosFlags.SWP_NOMOVE | (int)SetWindowPosFlags.SWP_NOSIZE);
+                (int)SetWindowPosFlags.SWP_NOACTIVATE | (int)SetWindowPosFlags.SWP_NOZORDER | (int)SetWindowPosFlags.SWP_NOREDRAW | (int)SetWindowPosFlags.SWP_NOMOVE | (int)SetWindowPosFlags.SWP_NOSIZE);
             
             // Force redraw.
             NativeMethods.InvalidateRect(hwndMag, IntPtr.Zero, true);
@@ -194,7 +197,8 @@ namespace Karna.Magnification
 
             hInst = NativeMethods.GetModuleHandle(null);
 
-            // Make the window opaque.
+
+            // Make the window opaque. Which has been dealt with in the magnifier class
             //form.AllowTransparency = true;
             //form.TransparencyKey = Color.Empty;
             //form.Opacity = 255;

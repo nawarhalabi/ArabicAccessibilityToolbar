@@ -48,10 +48,11 @@ namespace AccessibilityToolbar
             if (magnifierButton.Checked)
             {
                 magnifierWindow = new magnifier();
+                magnifierWindow.Show();
                 mgn = new Karna.Magnification.Magnifier(magnifierWindow, Properties.Settings.Default.isLens);
                 magnifierWindow.FormClosing += new FormClosingEventHandler(uncheckMagnifier);
+
                 applySettings();
-                magnifierWindow.Show();
             }
             else
             {

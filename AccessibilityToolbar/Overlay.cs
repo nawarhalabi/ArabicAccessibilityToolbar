@@ -45,9 +45,16 @@ namespace AccessibilityToolbar
             BackColor = Color.FromArgb(Properties.Settings.Default.overlayR, Properties.Settings.Default.overlayG, Properties.Settings.Default.overlayB);
             //Set the opacity of the overlay to 140 .... any suggestions???
             SetLayeredWindowAttributes(Handle, 0, 140, LayeredWindowAttributeFlags.LWA_ALPHA);
-            
-            Gma.UserActivityMonitor.HookManager.MouseMove += new MouseEventHandler(onMouseMove);
-        
+
+            if (Properties.Settings.Default.isRuler)//If ruler is on, hook the mouse moves with onMouseMove event
+                Gma.UserActivityMonitor.HookManager.MouseMove += new MouseEventHandler(onMouseMove);
+            else
+            {//else unhool it
+                Gma.UserActivityMonitor.HookManager.MouseMove -= new MouseEventHandler(onMouseMove);
+                //If not the ruler is on cover the whole screen with the overlay
+                Region = new Region(Screen.PrimaryScreen.WorkingArea);//Set the region
+                Invalidate();//force redraw
+            }
             //Apply ruler width-----------------------------------------------------
             rulerWidth = Properties.Settings.Default.rulerWidth;
             if (!Properties.Settings.Default.isRuler)

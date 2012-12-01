@@ -84,6 +84,9 @@ namespace AccessibilityToolbar
             Properties.Settings.Default.overlayR = (byte)red;
             Properties.Settings.Default.overlayG = (byte)green;
             Properties.Settings.Default.overlayB = (byte)blue;
+
+            Properties.Settings.Default.isRuler = RulerCheckBox.Checked;
+            Properties.Settings.Default.rulerWidth = (int)rulerNumericUpDown.Value;
         }
 
         private void loadSettings()
@@ -100,13 +103,22 @@ namespace AccessibilityToolbar
             red = Properties.Settings.Default.overlayR;
             green = Properties.Settings.Default.overlayG;
             blue = Properties.Settings.Default.overlayB;
-        }
 
+            rulerNumericUpDown.Value = Properties.Settings.Default.rulerWidth;
+            RulerCheckBox.Checked = Properties.Settings.Default.isRuler;
+        }
+        
         private void RestoreDefaultsButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Reset();
-            loadSettings();
-            applySettings();
+            
+            DialogResult dialogResult = MessageBox.Show("هل أنت متأكد\\ة من رغبتك في استعادة الأعدادات الافتراضية ", "تحذير", MessageBoxButtons.YesNo);
+
+            if (dialogResult == System.Windows.Forms.DialogResult.Yes)
+            {
+                Properties.Settings.Default.Reset();
+                loadSettings();
+                applySettings();
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -168,6 +180,18 @@ namespace AccessibilityToolbar
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void RulerCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RulerCheckBox.Checked)
+            {
+                rulerNumericUpDown.Enabled = true;
+            }
+            else
+            {
+                rulerNumericUpDown.Enabled = false;
+            }
         }
     }
 }

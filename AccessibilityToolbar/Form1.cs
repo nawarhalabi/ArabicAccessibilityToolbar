@@ -169,7 +169,7 @@ namespace AccessibilityToolbar
         }
 
         private void uncheckNarrator(Object sender, EventArgs e)
-        {//called when the narrator is closed form an external actor
+        {//called when the narrator is closed form an external actor------------------
             if (narratorButton.InvokeRequired)
             {
                 uncheck u = new uncheck(uncheckNarrator);
@@ -264,12 +264,6 @@ namespace AccessibilityToolbar
             }
 
             return base.ProcessCmdKey(ref message, keys);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ReadingRuler r = new ReadingRuler();
-            r.Show();
         }
     }
 }

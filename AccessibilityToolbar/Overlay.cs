@@ -12,6 +12,8 @@ namespace AccessibilityToolbar
 {
     public partial class Overlay : Form
     {
+        int test = 0;
+        int rulerWidth = 50;
         public Overlay()
         {
             InitializeComponent();
@@ -24,8 +26,8 @@ namespace AccessibilityToolbar
 
         private void applySettings()
         {//apply selected settings on the overlay --------------------------------
-            IntPtr desktop = GetDesktopWindow();
-            SetParent(Handle, desktop);
+            //IntPtr desktop = GetDesktopWindow();
+            //SetParent(Handle, desktop);
             //Get the primary screen rectangle--------------------------------------
             Rectangle s = Screen.PrimaryScreen.Bounds;
             //set the size of the overlay to the size of the screen--------------
@@ -43,7 +45,29 @@ namespace AccessibilityToolbar
             BackColor = Color.FromArgb(Properties.Settings.Default.overlayR, Properties.Settings.Default.overlayG, Properties.Settings.Default.overlayB);
             //Set the opacity of the overlay to 140 .... any suggestions???
             SetLayeredWindowAttributes(Handle, 0, 140, LayeredWindowAttributeFlags.LWA_ALPHA);
+            
+            Gma.UserActivityMonitor.HookManager.MouseMove += new MouseEventHandler(onMouseMove);
+        
+            //Apply ruler width-----------------------------------------------------
+            rulerWidth = Properties.Settings.Default.rulerWidth;
+            if (!Properties.Settings.Default.isRuler)
+                rulerWidth = 0;
+        }
 
+        private void onMouseMove(object sender, MouseEventArgs e)
+        {
+            if (Properties.Settings.Default.isRuler)//If reading ruler is on update its posistion based on the cursor
+            {
+                Graphics ee = CreateGraphics();//The window graphics
+                Rectangle rulerArea = new Rectangle(0, Cursor.Position.Y - rulerWidth / 2, Screen.PrimaryScreen.Bounds.Width, rulerWidth);
+
+                //Get the screen rectangle------------------------------
+                ee.Clip = new Region(Screen.PrimaryScreen.WorkingArea);
+                //Exclude the ruler area--------------------------------
+                ee.ExcludeClip(rulerArea);
+
+                Region = ee.Clip;//Set the region
+            }
         }
 
         private void settingsChanged(Object sender, PropertyChangedEventArgs args)

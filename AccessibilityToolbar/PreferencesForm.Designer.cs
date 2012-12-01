@@ -42,7 +42,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.chooseColourButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.topMostCheckBox = new System.Windows.Forms.CheckBox();
@@ -50,12 +49,17 @@
             this.saveChangesButton = new System.Windows.Forms.Button();
             this.cancelChangesButton = new System.Windows.Forms.Button();
             this.RestoreDefaultsButton = new System.Windows.Forms.Button();
+            this.RulerCheckBox = new System.Windows.Forms.CheckBox();
+            this.rulerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magnificationRateTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -157,6 +161,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.rulerNumericUpDown);
+            this.groupBox2.Controls.Add(this.RulerCheckBox);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.d);
@@ -175,14 +182,6 @@
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            // 
-            // d
-            // 
-            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.d.FormattingEnabled = true;
-            resources.ApplyResources(this.d, "d");
-            this.d.Name = "d";
             // 
             // chooseColourButton
             // 
@@ -232,6 +231,46 @@
             this.RestoreDefaultsButton.UseVisualStyleBackColor = true;
             this.RestoreDefaultsButton.Click += new System.EventHandler(this.RestoreDefaultsButton_Click);
             // 
+            // RulerCheckBox
+            // 
+            resources.ApplyResources(this.RulerCheckBox, "RulerCheckBox");
+            this.RulerCheckBox.Name = "RulerCheckBox";
+            this.RulerCheckBox.UseVisualStyleBackColor = true;
+            this.RulerCheckBox.CheckedChanged += new System.EventHandler(this.RulerCheckBox_CheckedChanged);
+            // 
+            // rulerNumericUpDown
+            // 
+            resources.ApplyResources(this.rulerNumericUpDown, "rulerNumericUpDown");
+            this.rulerNumericUpDown.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.rulerNumericUpDown.Minimum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.rulerNumericUpDown.Name = "rulerNumericUpDown";
+            this.rulerNumericUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // d
+            // 
+            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.d.FormattingEnabled = true;
+            resources.ApplyResources(this.d, "d");
+            this.d.Name = "d";
+            // 
             // PreferencesForm
             // 
             resources.ApplyResources(this, "$this");
@@ -256,6 +295,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rulerNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +323,8 @@
         private DropDownListColoured d;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown rulerNumericUpDown;
+        private System.Windows.Forms.CheckBox RulerCheckBox;
     }
 }

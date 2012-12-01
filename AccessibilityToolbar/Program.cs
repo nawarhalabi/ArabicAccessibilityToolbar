@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace AccessibilityToolbar
 {
@@ -13,9 +14,19 @@ namespace AccessibilityToolbar
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            bool createdNew;
+            using (Mutex mutex = new Mutex(true, "AccessibilityToolbar", out createdNew))
+                //This to prevent multiple toolbar instance from being launched in parallel
+            {
+                if (createdNew)
+                {
+                    Application.CurrentCulture = new System.Globalization.CultureInfo("ar");
+
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Form1());
+                }
+            }
         }
     }
 }

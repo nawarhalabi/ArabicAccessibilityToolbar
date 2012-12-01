@@ -241,7 +241,7 @@ namespace Karna.Magnification
         }
 
         protected virtual void Dispose(bool disposing)
-        {
+        {//Safely dispose the magnifier
             timer.Enabled = false;
             if (disposing)
                 timer.Dispose();

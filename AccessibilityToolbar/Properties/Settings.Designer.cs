@@ -166,5 +166,17 @@ namespace AccessibilityToolbar.Properties {
                 this["isRuler"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int rulerWidth {
+            get {
+                return ((int)(this["rulerWidth"]));
+            }
+            set {
+                this["rulerWidth"] = value;
+            }
+        }
     }
 }

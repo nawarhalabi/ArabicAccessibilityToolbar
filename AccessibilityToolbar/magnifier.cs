@@ -18,6 +18,8 @@ namespace AccessibilityToolbar
         {
             InitializeComponent();
         }
+
+        #region Native Methods
         //Native functions needed---------------------------------------------------------------
         [DllImport("Magnification.dll", CallingConvention = CallingConvention.ThisCall, EntryPoint = "MagShowSystemCursor")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -46,6 +48,8 @@ namespace AccessibilityToolbar
             /// </summary>
             LWA_ALPHA = 0x00000002
         }
+
+        #endregion 
 
         private void magnifier_Load(object sender, EventArgs e)
         {

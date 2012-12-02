@@ -15,7 +15,7 @@ namespace AccessibilityToolbar
         static void Main()
         {
             bool createdNew;
-            using (Mutex mutex = new Mutex(true, "AccessibilityToolbar", out createdNew))
+            using (Mutex mutex = new Mutex(true, "ArabicAccessibilityToolbar", out createdNew))
                 //This to prevent multiple toolbar instance from being launched in parallel
             {
                 if (createdNew)

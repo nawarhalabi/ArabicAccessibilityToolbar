@@ -117,15 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>الإعدادات</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAACsvej/l6/q/wAAAAAAAAAAAAAAAAAAAAAAAAAAk6zq/6e66P8AAAAAAAAAAJqx
+        6v+qvej/AAAAAAAAAAAAAAAAv8vo/0R38v/X2+b/AAAAAAAAAAAAAAAA09nm/0J28v+2xen/AAAAAAAA
+        AABuk+//iKbs/wAAAAAAAAAAAAAAAAAAAABciPH/nrXs/wAAAAAAAAAAAAAAAJuz7P9TgfH/AAAAAAAA
+        AAAAAAAAbpTv/4mm7f8AAAAAAAAAAAAAAAAAAAAAn7bt/0R38v9KfPL/Snzy/0t88v9Ed/L/kKzu/wAA
+        AAAAAAAAAAAAAG+V8P+Kp+7/AAAAAAAAAAAAAAAAAAAAAN3i6/9GePL/v8zt/+Dk6//Bzu3/QXXy/9HZ
+        7P8AAAAAAAAAAAAAAABvlfD/i6jv/wAAAAAAAAAAAAAAAAAAAAAAAAAAfZ/x/4mn8P/t7e3/jarw/2mR
+        8f8AAAAAAAAAAAAAAAAAAAAAcJbx/4yp8P8AAAAAAAAAAAAAAAAAAAAAAAAAAMLP8P9NffL/5+rv/1GA
+        8v+rwPD/AAAAAAAAAAAAAAAAAAAAAHGW8v+NqvH/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWofy/4Oj
+        8v9IevL/6Ovx/wAAAAAAAAAAAAAAAAAAAABxl/L/jqvy/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ+4
+        8/9BdfP/g6Tz/wAAAAAAAAAAgKHy/3GX8v9xl/L/Tn7y/1aE8v9xl/L/cZfy/5Ww8/8AAAAAAAAAAAAA
+        AADo7PT/tsn0/97k9P8AAAAAAAAAAL3O9P+3yfT/t8n0/7fJ9P+3yfT/t8n0/7fJ9P/I1fT/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA//+sQf//rEH//6xBPmesQRxnrEGc56xBgOesQYDnrEHB56xBweesQeHnrEHjAKxB4wCsQf//
+        rEH//6xB//+sQQ==
+</value>
   </data>
 </root>

@@ -12,7 +12,6 @@ namespace AccessibilityToolbar
 {
     public partial class Overlay : Form
     {
-        int test = 0;
         int rulerWidth = 50;
         public Overlay()
         {
@@ -81,6 +80,8 @@ namespace AccessibilityToolbar
         {
             applySettings();
         }
+
+        #region Native Methods
         //Native methods needed-------------------------------------------------------------
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         static extern int GetWindowLong(IntPtr hWnd, int index);
@@ -116,30 +117,11 @@ namespace AccessibilityToolbar
             /// </summary>
             LWA_ALPHA = 0x00000002
         }
+        #endregion
 
         private void Overlay_VisibleChanged(object sender, EventArgs e)
         {
             applySettings();
-        }
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int cx, int cy, int flags);
-
-        [FlagsAttribute]
-        internal enum SetWindowPosFlags : int
-        {
-            SWP_NOSIZE = 1,
-            SWP_NOMOVE = 2,
-            SWP_NOZORDER = 4,
-            SWP_NOREDRAW = 8,
-            SWP_NOACTIVATE = 0x10,
-            SWP_FRAMECHANGED = 0x20,
-            SWP_SHOWWINDOW = 0x40,
-            SWP_HIDEWINDOW = 0x80,
-            SWP_NOCOPYBITS = 0x100,
-            SWP_NOOWNERZORDER = 0x200,
-            SWP_NOSENDCHANGING = 0x400
         }
     }
 }

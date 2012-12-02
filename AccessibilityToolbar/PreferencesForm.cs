@@ -65,6 +65,7 @@ namespace AccessibilityToolbar
 
         private void saveSettings()
         {
+            //Run on System start-up?--------------------------------
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (startupCheckBox.Checked && key.GetValue("runonstartupATbar") == null)
             {
@@ -74,8 +75,8 @@ namespace AccessibilityToolbar
             {
                 key.DeleteValue("runonstartupATbar");
             }
-
             Properties.Settings.Default.startWithSystem = startupCheckBox.Checked;
+            //--------------------------------------------------------
             Properties.Settings.Default.alwaysOnTop = topMostCheckBox.Checked;
             Properties.Settings.Default.isLens = isLensCheckBox.Checked;
             Properties.Settings.Default.maxMagnifierHeight = (int)heightNumericUpDown.Value;
@@ -90,7 +91,7 @@ namespace AccessibilityToolbar
         }
 
         private void loadSettings()
-        {
+        {   
             RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
             startupCheckBox.Checked = key.GetValue("runonstartupATbar") != null;
@@ -111,8 +112,11 @@ namespace AccessibilityToolbar
         private void RestoreDefaultsButton_Click(object sender, EventArgs e)
         {
             
-            DialogResult dialogResult = MessageBox.Show("هل أنت متأكد\\ة من رغبتك في استعادة الأعدادات الافتراضية ", "تحذير", MessageBoxButtons.YesNo);
-
+            MessageBoxManager.Register();
+            MessageBoxManager.Yes = "نعم";
+            MessageBoxManager.No = "لا";
+            DialogResult dialogResult = MessageBox.Show(this, "هل أنت متأكد\\ة من رغبتك في استعادة الإعدادات الافتراضية ", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+            MessageBoxManager.Unregister();
             if (dialogResult == System.Windows.Forms.DialogResult.Yes)
             {
                 Properties.Settings.Default.Reset();

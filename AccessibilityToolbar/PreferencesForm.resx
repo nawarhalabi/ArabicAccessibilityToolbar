@@ -211,13 +211,13 @@
     <value>156, 19</value>
   </data>
   <data name="isLensCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+    <value>142, 17</value>
   </data>
   <data name="isLensCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="isLensCheckBox.Text" xml:space="preserve">
-    <value>دمج المكبرة مع مؤش الفأرة</value>
+    <value>دمج المكبر مع مؤش الفأرة</value>
   </data>
   <data name="&gt;&gt;isLensCheckBox.Name" xml:space="preserve">
     <value>isLensCheckBox</value>
@@ -343,13 +343,13 @@
     <value>153, 56</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 13</value>
+    <value>147, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>الأبعاد الافتراضية لنافذة المكبرة:</value>
+    <value>الأبعاد الافتراضية لنافذة المكبر:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -373,7 +373,7 @@
     <value>1</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>إعدادات المكبرة</value>
+    <value>إعدادات المكبر</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.InteropServices;
-
+using Gma.UserActivityMonitor;
 namespace Karna.Magnification
 {
     public class Magnifier : IDisposable
@@ -41,11 +41,17 @@ namespace Karna.Magnification
                 timer.Tick += new EventHandler(timer_Tick);
                 timer.Interval = NativeMethods.USER_TIMER_MINIMUM;
                 timer.Enabled = true;
+                //HookManager.MouseMove += new MouseEventHandler(mouseMove); 
             }
             else
             {
                 form.Close();
             }
+        }
+      
+        private void mouseMove(Object sender, MouseEventArgs e)
+        {
+            UpdateMaginifier();
         }
 
         public void recreateSelf()

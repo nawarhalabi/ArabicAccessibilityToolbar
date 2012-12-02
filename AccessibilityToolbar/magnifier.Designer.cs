@@ -45,7 +45,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.ShowInTaskbar = false;
-            this.Text = "المكبرة";
+            this.Text = "المكبر";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.magnifier_FormClosing);
             this.Load += new System.EventHandler(this.magnifier_Load);

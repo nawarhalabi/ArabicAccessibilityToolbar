@@ -168,22 +168,35 @@ namespace AccessibilityToolbar
         {
             //Fill the list of Colours of the combobox----------------------------------------
             ResourceManager man1 = Properties.Resources.ResourceManager;
-            var item = new listItem { name = "أحمر", color = Color.Red };
-            d.Items.Add(item);
-            item = new listItem { name = "أخضر", color = Color.Green };
-            d.Items.Add(item);
-            item = new listItem { name = "أزرق", color = Color.Blue };
-            d.Items.Add(item);
-            item = new listItem { name = "أصفر", color = Color.Yellow };
-            d.Items.Add(item);
-            item = new listItem { name = "برتقالي", color = Color.Orange };
-            d.Items.Add(item);
-            d.DisplayMember = "name";
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            if (Thread.CurrentThread.CurrentUICulture.Name == "ar")
+            {
+                var item = new listItem { name = "أحمر", color = Color.Red };
+                d.Items.Add(item);
+                item = new listItem { name = "أخضر", color = Color.Green };
+                d.Items.Add(item);
+                item = new listItem { name = "أزرق", color = Color.Blue };
+                d.Items.Add(item);
+                item = new listItem { name = "أصفر", color = Color.Yellow };
+                d.Items.Add(item);
+                item = new listItem { name = "برتقالي", color = Color.Orange };
+                d.Items.Add(item);
+                d.DisplayMember = "name";
+            }
+            if (Thread.CurrentThread.CurrentUICulture.Name == "en")
+            {
+                var item = new listItem { name = "Red", color = Color.Red };
+                d.Items.Add(item);
+                item = new listItem { name = "Green", color = Color.Green };
+                d.Items.Add(item);
+                item = new listItem { name = "Blue", color = Color.Blue };
+                d.Items.Add(item);
+                item = new listItem { name = "Yellow", color = Color.Yellow };
+                d.Items.Add(item);
+                item = new listItem { name = "Orange", color = Color.Orange };
+                d.Items.Add(item);
+                d.DisplayMember = "name";
+            }
         }
 
         private void RulerCheckBox_CheckedChanged(object sender, EventArgs e)

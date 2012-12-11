@@ -118,48 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Black" xml:space="preserve">
-    <value>أسود</value>
+    <value>Black</value>
   </data>
   <data name="blue" xml:space="preserve">
-    <value>أزرق</value>
+    <value>Blue</value>
   </data>
   <data name="brown" xml:space="preserve">
-    <value>بني</value>
+    <value>Brown</value>
   </data>
   <data name="ColourOverlay" xml:space="preserve">
     <value>شاشة التغطية</value>
   </data>
   <data name="green" xml:space="preserve">
-    <value>أخضر</value>
+    <value>Green</value>
   </data>
   <data name="grey" xml:space="preserve">
-    <value>رمادي</value>
+    <value>Gray</value>
   </data>
   <data name="Magnifier" xml:space="preserve">
-    <value>المكبر</value>
+    <value>Magnifier</value>
   </data>
   <data name="maroon" xml:space="preserve">
-    <value>خمري</value>
+    <value>Maroon</value>
   </data>
   <data name="olive" xml:space="preserve">
-    <value>زيتوني</value>
+    <value>Olive</value>
   </data>
   <data name="OnScreenKeyboard" xml:space="preserve">
-    <value>لوحة المفاتيح على الشاشة</value>
+    <value>On-Screen Keyboard</value>
   </data>
   <data name="orange" xml:space="preserve">
-    <value>برتقالي</value>
+    <value>Orange</value>
   </data>
   <data name="purple" xml:space="preserve">
-    <value>أرجواني</value>
+    <value>Purple</value>
   </data>
   <data name="red" xml:space="preserve">
-    <value>أحمر</value>
+    <value>Red</value>
   </data>
   <data name="ScreenReader" xml:space="preserve">
-    <value>قارئ الشاشة</value>
+    <value>Screen Reader</value>
   </data>
   <data name="yellow" xml:space="preserve">
-    <value>أصفر</value>
+    <value>Yellow</value>
   </data>
 </root>

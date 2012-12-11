@@ -133,7 +133,9 @@ namespace AccessibilityToolbar
             else
             {
                 if (overlay != null)
+                {
                     overlay.Visible = false;
+                }
             }
         }
 
@@ -182,7 +184,6 @@ namespace AccessibilityToolbar
         {
             //Apply the related settings to the form when it loads---------------------
             applySettings();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ar");
             Properties.Settings.Default.Reload();
         }
 
@@ -263,6 +264,86 @@ namespace AccessibilityToolbar
             }
 
             return base.ProcessCmdKey(ref message, keys);
+        }
+
+        private void العربيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo("ar");
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar");
+            //Application.CurrentCulture = new CultureInfo("ar");
+            Properties.Settings.Default.culture = "ar";
+            //Properties.Settings.Default.Save();
+            //if (preferencesForm != null && !preferencesForm.IsDisposed)
+            //    preferencesForm.refreshCulture();
+            //refreshCulture();
+
+            ToolStrip s = ((ToolStripMenuItem)sender).GetCurrentParent();
+
+            foreach (ToolStripMenuItem i in s.Items)
+            {
+                i.Checked = false;
+            }
+            ((ToolStripMenuItem)sender).Checked = true;
+        }
+
+        public void refreshCulture()
+        {
+            ComponentResourceManager r = new ComponentResourceManager(this.GetType());
+            r.ApplyResources(this, "$this");
+            foreach (Control c in this.Controls)
+            {
+                refreshControlCulture(c);
+            }
+            r.ApplyResources(menuStrip1, "menuStrip1");
+            foreach (ToolStripItem i in menuStrip1.Items)
+            {
+                r.ApplyResources(i, i.Name);
+                foreach (ToolStripItem ii in ((ToolStripDropDownItem)i).DropDownItems)
+                {
+                    r.ApplyResources(ii, ii.Name);
+                }
+            }
+        }
+
+        private void refreshControlCulture(Control control)
+        {
+            ComponentResourceManager r = new ComponentResourceManager(this.GetType());
+            r.ApplyResources(control, control.Name);
+            foreach (Control c in control.Controls)
+            {
+                refreshControlCulture(c);
+            }
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            //Application.CurrentCulture = new CultureInfo("en");
+            Properties.Settings.Default.culture = "en";
+            //Properties.Settings.Default.Save();
+            //if (preferencesForm != null && !preferencesForm.IsDisposed)
+            //    preferencesForm.refreshCulture();
+            //refreshCulture();
+
+            ToolStrip s = ((ToolStripMenuItem)sender).GetCurrentParent();
+
+            foreach (ToolStripMenuItem i in s.Items)
+            {
+                i.Checked = false;
+            }
+            ((ToolStripMenuItem)sender).Checked = true;
+        }
+
+        private void اللغةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem d = (ToolStripMenuItem)sender;
+            foreach (ToolStripMenuItem i in d.DropDown.Items)
+            {
+                if ((String)i.Tag == Properties.Settings.Default.culture)
+                    i.Checked = true;
+            }
         }
     }
 }

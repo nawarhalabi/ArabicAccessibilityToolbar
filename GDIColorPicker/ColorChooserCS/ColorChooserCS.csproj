@@ -103,6 +103,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Content Include="App.ico" />
+    <EmbeddedResource Include="ColorChooser1.en.resx">
+      <DependentUpon>ColorChooser1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ColorChooser1.resx">
       <DependentUpon>ColorChooser1.cs</DependentUpon>
     </EmbeddedResource>

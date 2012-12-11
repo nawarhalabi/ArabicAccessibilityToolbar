@@ -40,6 +40,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اللغةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.العربيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +55,7 @@
             resources.ApplyResources(this.keyboardButton, "keyboardButton");
             this.keyboardButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.keyboardButton.Name = "keyboardButton";
-            this.keyboardButton.Tag = "لوحة المفاتيح على الشاشة";
+            this.keyboardButton.Tag = "On-Screen Keyboard";
             this.keyboardButton.UseVisualStyleBackColor = true;
             this.keyboardButton.CheckedChanged += new System.EventHandler(this.keyboardButton_Click);
             // 
@@ -61,7 +64,7 @@
             resources.ApplyResources(this.narratorButton, "narratorButton");
             this.narratorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.narratorButton.Name = "narratorButton";
-            this.narratorButton.Tag = "قارئ الشاشة";
+            this.narratorButton.Tag = "Screen Reader";
             this.narratorButton.UseVisualStyleBackColor = true;
             this.narratorButton.CheckedChanged += new System.EventHandler(this.narratorButton_Click);
             // 
@@ -78,55 +81,79 @@
             resources.ApplyResources(this.contrastButton, "contrastButton");
             this.contrastButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.contrastButton.Name = "contrastButton";
-            this.contrastButton.Tag = "شاشة التغطية";
+            this.contrastButton.Tag = "Colour Overlay";
             this.contrastButton.UseVisualStyleBackColor = true;
             this.contrastButton.CheckedChanged += new System.EventHandler(this.contrastButton_Click);
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.اللغةToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.preferencesToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
             // preferencesToolStripMenuItem
             // 
-            resources.ApplyResources(this.preferencesToolStripMenuItem, "preferencesToolStripMenuItem");
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
+            resources.ApplyResources(this.preferencesToolStripMenuItem, "preferencesToolStripMenuItem");
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userGuideToolStripMenuItem,
             this.aboutUsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // userGuideToolStripMenuItem
             // 
-            resources.ApplyResources(this.userGuideToolStripMenuItem, "userGuideToolStripMenuItem");
             this.userGuideToolStripMenuItem.Name = "userGuideToolStripMenuItem";
+            resources.ApplyResources(this.userGuideToolStripMenuItem, "userGuideToolStripMenuItem");
             // 
             // aboutUsToolStripMenuItem
             // 
-            resources.ApplyResources(this.aboutUsToolStripMenuItem, "aboutUsToolStripMenuItem");
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
+            resources.ApplyResources(this.aboutUsToolStripMenuItem, "aboutUsToolStripMenuItem");
+            // 
+            // اللغةToolStripMenuItem
+            // 
+            this.اللغةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.العربيةToolStripMenuItem,
+            this.englishToolStripMenuItem});
+            this.اللغةToolStripMenuItem.Name = "اللغةToolStripMenuItem";
+            resources.ApplyResources(this.اللغةToolStripMenuItem, "اللغةToolStripMenuItem");
+            this.اللغةToolStripMenuItem.Click += new System.EventHandler(this.اللغةToolStripMenuItem_Click);
+            // 
+            // العربيةToolStripMenuItem
+            // 
+            this.العربيةToolStripMenuItem.Name = "العربيةToolStripMenuItem";
+            resources.ApplyResources(this.العربيةToolStripMenuItem, "العربيةToolStripMenuItem");
+            this.العربيةToolStripMenuItem.Tag = "ar";
+            this.العربيةToolStripMenuItem.Click += new System.EventHandler(this.العربيةToolStripMenuItem_Click);
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Tag = "en";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -164,7 +191,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Tag = "لوحة التحكم العربية";
+            this.Tag = "Accessibility ToolBar";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -192,6 +219,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem اللغةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem العربيةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
     }
 }
 

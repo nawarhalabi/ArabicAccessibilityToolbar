@@ -11,7 +11,8 @@
     <RootNamespace>AccessibilityToolbar</RootNamespace>
     <AssemblyName>AccessibilityToolbar</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -40,7 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -193,7 +194,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\favicon.ico" />
+    <Content Include="Icons\keyboard.png" />
     <Content Include="Icons\magnifier.png" />
+    <Content Include="Icons\magnifier_zoom_in.png" />
+    <Content Include="Icons\overlay.png" />
+    <Content Include="Icons\sound.png" />
+    <Content Include="Icons\tts.png" />
+    <None Include="Resources\keyboard.bmp" />
     <None Include="Resources\colours.bmp" />
   </ItemGroup>
   <ItemGroup>

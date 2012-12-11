@@ -45,6 +45,7 @@
             this.RulerCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.chooseColourButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.topMostCheckBox = new System.Windows.Forms.CheckBox();
@@ -52,7 +53,6 @@
             this.saveChangesButton = new System.Windows.Forms.Button();
             this.cancelChangesButton = new System.Windows.Forms.Button();
             this.RestoreDefaultsButton = new System.Windows.Forms.Button();
-            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magnificationRateTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumericUpDown)).BeginInit();
@@ -64,7 +64,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.trackBarLabel);
             this.groupBox1.Controls.Add(this.magnificationRateTrackBar);
             this.groupBox1.Controls.Add(this.label5);
@@ -74,6 +73,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -160,7 +160,6 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.rulerNumericUpDown);
             this.groupBox2.Controls.Add(this.RulerCheckBox);
@@ -168,6 +167,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.d);
             this.groupBox2.Controls.Add(this.chooseColourButton);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -205,14 +205,22 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
+            // 
+            // d
+            // 
+            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.d.FormattingEnabled = true;
+            resources.ApplyResources(this.d, "d");
+            this.d.Name = "d";
             // 
             // chooseColourButton
             // 
@@ -223,9 +231,9 @@
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.topMostCheckBox);
             this.groupBox3.Controls.Add(this.startupCheckBox);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -261,14 +269,6 @@
             this.RestoreDefaultsButton.Name = "RestoreDefaultsButton";
             this.RestoreDefaultsButton.UseVisualStyleBackColor = true;
             this.RestoreDefaultsButton.Click += new System.EventHandler(this.RestoreDefaultsButton_Click);
-            // 
-            // d
-            // 
-            resources.ApplyResources(this.d, "d");
-            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.d.FormattingEnabled = true;
-            this.d.Name = "d";
             // 
             // PreferencesForm
             // 

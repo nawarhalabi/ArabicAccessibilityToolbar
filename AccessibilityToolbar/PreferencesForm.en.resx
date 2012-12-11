@@ -184,17 +184,27 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Ruler Width</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label4.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="rulerNumericUpDown.AccessibleName" xml:space="preserve">
     <value>Choose Ruler Width</value>
   </data>
   <data name="rulerNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 110</value>
   </data>
+  <data name="rulerNumericUpDown.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="RulerCheckBox.AccessibleDescription" xml:space="preserve">
     <value />
   </data>
   <data name="RulerCheckBox.AccessibleName" xml:space="preserve">
     <value>Activate Reading Ruler</value>
+  </data>
+  <data name="RulerCheckBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="RulerCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 111</value>
@@ -204,6 +214,9 @@
   </data>
   <data name="RulerCheckBox.Text" xml:space="preserve">
     <value>Activate Reading Ruler</value>
+  </data>
+  <data name="RulerCheckBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>254, 25</value>
@@ -293,7 +306,6 @@
   <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

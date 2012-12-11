@@ -224,7 +224,7 @@ namespace Gma.UserActivityMonitor
                     s_MouseDelegate,
                     Marshal.GetHINSTANCE(
                         Assembly.GetExecutingAssembly().GetModules()[0]),
-                    0);
+                    IntPtr.Zero);
                 //If SetWindowsHookEx fails.
                 if (s_MouseHookHandle == 0)
                 {
@@ -389,7 +389,7 @@ namespace Gma.UserActivityMonitor
                     s_KeyboardDelegate,
                     Marshal.GetHINSTANCE(
                         Assembly.GetExecutingAssembly().GetModules()[0]),
-                    0);
+                    IntPtr.Zero);
                 //If SetWindowsHookEx fails.
                 if (s_KeyboardHookHandle == 0)
                 {

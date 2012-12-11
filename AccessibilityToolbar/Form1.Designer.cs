@@ -63,6 +63,7 @@
             // 
             resources.ApplyResources(this.narratorButton, "narratorButton");
             this.narratorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.narratorButton.Image = global::AccessibilityToolbar.Properties.Resources.tts;
             this.narratorButton.Name = "narratorButton";
             this.narratorButton.Tag = "Screen Reader";
             this.narratorButton.UseVisualStyleBackColor = true;
@@ -72,6 +73,7 @@
             // 
             resources.ApplyResources(this.magnifierButton, "magnifierButton");
             this.magnifierButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.magnifierButton.Image = global::AccessibilityToolbar.Properties.Resources.magnifier_zoom_in;
             this.magnifierButton.Name = "magnifierButton";
             this.magnifierButton.UseVisualStyleBackColor = true;
             this.magnifierButton.CheckedChanged += new System.EventHandler(this.magnifierButton_Click);
@@ -80,6 +82,7 @@
             // 
             resources.ApplyResources(this.contrastButton, "contrastButton");
             this.contrastButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.contrastButton.Image = global::AccessibilityToolbar.Properties.Resources.overlay;
             this.contrastButton.Name = "contrastButton";
             this.contrastButton.Tag = "Colour Overlay";
             this.contrastButton.UseVisualStyleBackColor = true;
@@ -137,8 +140,8 @@
             this.اللغةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.العربيةToolStripMenuItem,
             this.englishToolStripMenuItem});
-            this.اللغةToolStripMenuItem.Name = "اللغةToolStripMenuItem";
             resources.ApplyResources(this.اللغةToolStripMenuItem, "اللغةToolStripMenuItem");
+            this.اللغةToolStripMenuItem.Name = "اللغةToolStripMenuItem";
             this.اللغةToolStripMenuItem.Click += new System.EventHandler(this.اللغةToolStripMenuItem_Click);
             // 
             // العربيةToolStripMenuItem

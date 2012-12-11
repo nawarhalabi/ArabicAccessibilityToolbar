@@ -127,22 +127,54 @@
   <data name="keyboardButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
+  <data name="keyboardButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="keyboardButton.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="keyboardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAfCAYAAACGVs+MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAARkSURBVFhH7VZLT1tHFD5AgaSEh3kGDEbGEPWxacWqi6pSWPQHsPSmarddp4ssWFZVorYpAkSG
+        JhBIIXaDsc3LprahFV1VqtLSCswjJraJn9djo2xaRdMzcy/OXNtEWTmbXukTh2/OOd/ne8/MvQD/X6/7
+        DvRv5j54e+t07J2fT5fKh6zzymbuQ/HbB7ZOb13ZyrFyY2Az54HJ36rBHKCkL5BjZYefbjevphvAtEGJ
+        yZdlPb7sc0QS47CEiMmXixZzWeTlvKIc7FGK43W5f7ieyacZ6PRSYtzIsq4NGmv1Zj5q/ynecYZWb7Kr
+        2ZPukTl03d3iThl1HOa0BRKXCzn5fx7zWuMG/VHoeTUDbeuUtHsoa1/P/AUj7I2+QBYfhwqzn17ncyJz
+        PT5q6fOfDsscz8Fce57z02RhHV/r9j0zNq9lPhN6Hs1A85pCWtYoa17N/MmLLroUdoYLLkUYkLnaVWqp
+        cWWGZU7kONP2POdMCwNyDo/B/cxoWM1aNT11BurdCmlcybCGZUUYgLkTJkEY0HELcQvMngzrOJETtee5
+        2agwUNCLwUzK2LCqWIXeSmYbuIE3XWlS586wOrcSBJvSCJMHo3lM7H8sGsnc5F4rjAXf03Ei5/DTF9zh
+        l8V12Peb35suuugXXO+SS1ENVC+lSa0zw2qWlBDYUsaOR6yuEGBjNbyhzOO8VAJjlTqOJ+2wmlI9OAfA
+        Kqod6ZtCz4kG5tBA5WKaVDkUhn93eFPcDXxHFOIG7y3znR462OGlQzLHc/iuOqcHa8EhrHqY+oTrIVQD
+        8DBNEAwhZgCNcDMFSAkDMg8OOgiO1JCOU3NI6R6ogdsXFhWrpqcZsCcI2JMMbAl1CKfDrAh3w8KAnj8Z
+        hOnIkI5Tc0jJHrzvTNiIWlahZ0/8qt6BhRiBBwkGC/EQn1IY3b1ahK93+oUBee2r3XoY/8Og40TO3lsl
+        e/Da7/ZrYT5+U9PT7sAcGpiPMfghtg/3jw2Wzdy1M/Tim5L3lLlXic1bp5+XqmsLsEu4Na8LvfmnmoHZ
+        KIH7fO9HxSNoWadMgjgHCjh5vWSMp504B4rqcAhRy6rpoYF9fAQz+MzuRRjcCwsDFbYEOwPOhTAgc68S
+        w4O4MFCYy7c56lhVvYhmYPpYHZq7T9QhJI/ZC4TUk1DHyevnxLeP1JOwsG4Ch3AaDah62zgTeAemQgTu
+        HDP4PhQHEroKt/4eyGN01wxTR706Tl4/L+ZDW6pudLcLdRaF3p1jzQA5IjCFv2Qq9BzIEUU8kXCCcbKA
+        k9dfFpeqi2Gvf4UeOdIMTBwQPMfZa4BmYCx4DSYOWPkR9MFI4ALAtzsmGA9Owtiev2wYDy6Lw0pc/K1m
+        s1XBjUd1ZcPIjni7isv0CzX0+9Pv9m9l3i8nLJ5YuzDQGci1CgNlRq8nZoaRkUowLVNDtzc7UG50eaI9
+        woABP8M6V5Reg0sx1S9GWsQr8gy2w8Ymx+MmHSevvyQuWYf9+Kc512tbSVzGL6qK/wCr8nDjBVqBeQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="keyboardButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="keyboardButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 27</value>
+    <value>113, 25</value>
   </data>
   <data name="keyboardButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 48</value>
+    <value>110, 48</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="keyboardButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="keyboardButton.Text" xml:space="preserve">
-    <value>لوحة المفاتيح على الشاشة</value>
-  </data>
-  <data name="keyboardButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+    <value>لوحة المفاتيح
+على الشاشة</value>
   </data>
   <data name="&gt;&gt;keyboardButton.Name" xml:space="preserve">
     <value>keyboardButton</value>
@@ -165,20 +197,20 @@
   <data name="narratorButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
+  <data name="narratorButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="narratorButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 27</value>
+    <value>333, 25</value>
   </data>
   <data name="narratorButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 48</value>
+    <value>106, 48</value>
   </data>
   <data name="narratorButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="narratorButton.Text" xml:space="preserve">
     <value>قارئ الشاشة</value>
-  </data>
-  <data name="narratorButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;narratorButton.Name" xml:space="preserve">
     <value>narratorButton</value>
@@ -201,20 +233,23 @@
   <data name="magnifierButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
+  <data name="magnifierButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="magnifierButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 27</value>
+    <value>7, 25</value>
+  </data>
+  <data name="magnifierButton.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 10, 0</value>
   </data>
   <data name="magnifierButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 48</value>
+    <value>106, 48</value>
   </data>
   <data name="magnifierButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="magnifierButton.Text" xml:space="preserve">
     <value>المكبر</value>
-  </data>
-  <data name="magnifierButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;magnifierButton.Name" xml:space="preserve">
     <value>magnifierButton</value>
@@ -237,20 +272,20 @@
   <data name="contrastButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
+  <data name="contrastButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="contrastButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 27</value>
+    <value>223, 25</value>
   </data>
   <data name="contrastButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 48</value>
+    <value>110, 48</value>
   </data>
   <data name="contrastButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="contrastButton.Text" xml:space="preserve">
     <value>شاشة التغطية</value>
-  </data>
-  <data name="contrastButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;contrastButton.Name" xml:space="preserve">
     <value>contrastButton</value>
@@ -304,16 +339,19 @@
     <value>مساعدة</value>
   </data>
   <data name="العربيةToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="العربيةToolStripMenuItem.Text" xml:space="preserve">
     <value>العربية</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="اللغةToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="اللغةToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
@@ -325,7 +363,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
+    <value>444, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -352,7 +390,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 80</value>
+    <value>34, 76</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 20</value>
@@ -382,7 +420,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 80</value>
+    <value>144, 76</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -412,7 +450,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 80</value>
+    <value>246, 76</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 20</value>
@@ -442,7 +480,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 80</value>
+    <value>356, 76</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 20</value>
@@ -475,7 +513,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>386, 109</value>
+    <value>444, 97</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -502,10 +540,10 @@
 </value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>402, 147</value>
+    <value>460, 135</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>402, 147</value>
+    <value>460, 135</value>
   </data>
   <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>

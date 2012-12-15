@@ -193,7 +193,7 @@ namespace Gma.UserActivityMonitor
             int idHook,
             HookProc lpfn,
             IntPtr hMod,
-            IntPtr dwThreadId);
+            int dwThreadId);
 
         /// <summary>
         /// The UnhookWindowsHookEx function removes a hook procedure installed in a hook chain by the SetWindowsHookEx function. 

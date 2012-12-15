@@ -59,7 +59,6 @@ namespace AccessibilityToolbar
         private void saveChangesButton_Click(object sender, EventArgs e)
         {
             saveSettings();
-            applySettings();
             Close();
         }
 
@@ -111,7 +110,6 @@ namespace AccessibilityToolbar
         
         private void RestoreDefaultsButton_Click(object sender, EventArgs e)
         {
-            
             MessageBoxManager.Register();
             MessageBoxManager.Yes = "نعم";
             MessageBoxManager.No = "لا";

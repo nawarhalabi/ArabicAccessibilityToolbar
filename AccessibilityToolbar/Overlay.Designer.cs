@@ -40,6 +40,7 @@
             this.Name = "Overlay";
             this.ShowInTaskbar = false;
             this.Text = "Overlay";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Overlay_FormClosing);
             this.Load += new System.EventHandler(this.Overlay_Load);
             this.VisibleChanged += new System.EventHandler(this.Overlay_VisibleChanged);
             this.ResumeLayout(false);

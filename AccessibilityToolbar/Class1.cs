@@ -7,17 +7,6 @@ using System.Drawing;
 
 namespace AccessibilityToolbar
 {
-
-    class listItem
-    {
-        public Color color;
-        public string name;
-        public string toString()
-        {
-            return name;
-        }
-    }
-
     class DropDownListColoured : ComboBox
     {
         protected override void OnCreateControl()
@@ -46,6 +35,16 @@ namespace AccessibilityToolbar
                                 rect.Width - 10, rect.Height - 10);
                 e.DrawFocusRectangle();
             }
+        }
+    }
+
+    class listItem
+    {
+        public Color color;
+        public string name;
+        public string toString()
+        {
+            return name;
         }
     }
 }

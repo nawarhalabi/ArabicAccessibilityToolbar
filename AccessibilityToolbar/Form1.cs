@@ -16,17 +16,21 @@ namespace AccessibilityToolbar
 {
     public partial class Form1 : Form
     {
-        magnifier magnifierWindow = null;
-        Magnifier mgn = null;
+        magnifier magnifierWindowLens = null;
+        magnifier magnifierWindowDocked = null;
+        Magnifier mgnLens = null;
+        Magnifier mgnDocked = null;
         Overlay overlay = new Overlay();
         System.Diagnostics.Process pKeyboard = null;
         System.Diagnostics.Process pNarrtor = null;
         PreferencesForm preferencesForm = null;
+        Manual manual = null;
+        Aboutus aboutus = null;
 
         public Form1()
         {
             //When the overlay is closed uncheck the overlay button-----------------
-            overlay.FormClosing += new FormClosingEventHandler(uncheckContrast);
+            overlay.FormClosing += uncheckContrast;
             //Apply settings on the toolbar when they get changed--------------------
             Properties.Settings.Default.PropertyChanged +=new PropertyChangedEventHandler(settingsChanged);
             InitializeComponent();
@@ -47,18 +51,34 @@ namespace AccessibilityToolbar
         {
             if (magnifierButton.Checked)
             {
-                magnifierWindow = new magnifier();
-                magnifierWindow.Show();
-                mgn = new Karna.Magnification.Magnifier(magnifierWindow, Properties.Settings.Default.isLens);
-                magnifierWindow.FormClosing += new FormClosingEventHandler(uncheckMagnifier);
-                applySettings();
+                if (Properties.Settings.Default.isLens)
+                {
+                    magnifierWindowLens = new magnifier(Properties.Settings.Default.isLens);
+                    magnifierWindowLens.Show();
+                    mgnLens = new Karna.Magnification.Magnifier(magnifierWindowLens, Properties.Settings.Default.isLens);
+                    magnifierWindowLens.FormClosing += uncheckMagnifier;
+                    mgnLens.Magnification = (float)(Properties.Settings.Default.magnificationRate + 2.0) / 2;
+                }
+                else
+                {
+                    magnifierWindowDocked = new magnifier(Properties.Settings.Default.isLens);
+                    magnifierWindowDocked.Show();
+                    mgnDocked = new Magnifier(magnifierWindowDocked, Properties.Settings.Default.isLens);
+                    magnifierWindowDocked.FormClosing += uncheckMagnifier;
+                    mgnDocked.Magnification = (float)(Properties.Settings.Default.magnificationRate + 2.0) / 2;
+                }
             }
             else
             {
-                if (magnifierWindow != null)
+                if (magnifierWindowLens != null && !magnifierWindowLens.IsDisposed)
                 {
-                    magnifierWindow.Close();
-                    magnifierWindow.Dispose();
+                    magnifierWindowLens.Close();
+                    magnifierWindowLens.Dispose();
+                }
+                if (magnifierWindowDocked != null && !magnifierWindowDocked.IsDisposed)
+                {
+                    magnifierWindowDocked.Close();
+                    magnifierWindowDocked.Dispose();
                 }
             }
         }
@@ -79,7 +99,7 @@ namespace AccessibilityToolbar
             if (keyboardButton.Checked)
             {
                 pKeyboard = System.Diagnostics.Process.Start("osk.exe");
-                pKeyboard.Exited += new EventHandler(uncheckKeyboard);
+                pKeyboard.Exited += uncheckKeyboard;
                 pKeyboard.EnableRaisingEvents = true;
             }
             else
@@ -126,9 +146,9 @@ namespace AccessibilityToolbar
                 if (overlay == null || overlay.IsDisposed)
                 {
                     overlay = new Overlay();
-                    overlay.FormClosing +=new FormClosingEventHandler(uncheckContrast);
+                    overlay.FormClosing += uncheckContrast;
                 }
-                overlay.Show();
+                overlay.Visible = true;
             }
             else
             {
@@ -155,7 +175,7 @@ namespace AccessibilityToolbar
             if (narratorButton.Checked)
             {
                 pNarrtor = System.Diagnostics.Process.Start("Narrator.exe");
-                pNarrtor.Exited += new EventHandler(uncheckNarrator);
+                pNarrtor.Exited += uncheckNarrator;
                 pNarrtor.EnableRaisingEvents = true;
             }
             else
@@ -189,14 +209,39 @@ namespace AccessibilityToolbar
 
         private void applySettings()
         {
-            if (mgn != null)
+            if (magnifierWindowLens != null && !magnifierWindowLens.IsDisposed && !Properties.Settings.Default.isLens)
             {
-                mgn.isLens = Properties.Settings.Default.isLens;
-                mgn.Magnification = (float)(Properties.Settings.Default.magnificationRate + 2.0) / 2;
+                if (mgnLens.isLens != Properties.Settings.Default.isLens)
+                {
+                    bool magIsOn = magnifierButton.Checked;
+                    magnifierWindowLens.Close();
+                    magnifierWindowLens.Dispose();
+                    magnifierButton.Checked = magIsOn;
+                }
+            }
+
+            if (magnifierWindowDocked != null && !magnifierWindowDocked.IsDisposed && Properties.Settings.Default.isLens)
+            {
+                if (mgnDocked.isLens != Properties.Settings.Default.isLens)
+                {
+                    bool magIsOn = magnifierButton.Checked;
+                    magnifierWindowDocked.Close();
+                    magnifierWindowDocked.Dispose();
+                    magnifierButton.Checked = magIsOn;
+                }
+            }
+
+            if (magnifierWindowDocked != null && !magnifierWindowDocked.IsDisposed)
+            {
+                mgnDocked.Magnification = (float)(Properties.Settings.Default.magnificationRate + 2.0) / 2;
+            }
+
+            if (magnifierWindowLens != null && !magnifierWindowLens.IsDisposed)
+            {
+                mgnLens.Magnification = (float)(Properties.Settings.Default.magnificationRate + 2.0) / 2;
             }
 
             TopMost = Properties.Settings.Default.alwaysOnTop;
-            
         }
 
         private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -210,19 +255,34 @@ namespace AccessibilityToolbar
             Properties.Settings.Default.Save();
 
             //Close all sub-windows before closing the application (on-screen keyboard, narrator, overlay and magnifier)-------------
-            if (magnifierWindow != null)
-                magnifierWindow.Close();
+            if (magnifierWindowLens != null && !magnifierWindowLens.IsDisposed)
+            {
+                magnifierWindowLens.FormClosing -= uncheckMagnifier;
+                magnifierWindowLens.Close();
+            }
+            if (magnifierWindowDocked != null && !magnifierWindowDocked.IsDisposed)
+            {
+                magnifierWindowDocked.FormClosing -= uncheckMagnifier;
+                magnifierWindowDocked.Close();
+            }
+
             if (overlay != null)
+            {
+                overlay.FormClosing -= uncheckContrast;
                 overlay.Close();
+            }
+
             if (pKeyboard != null)
                 try
                 {
+                    pKeyboard.Exited -= uncheckKeyboard;
                     pKeyboard.Kill();
                 }
                 catch { }
             if (pNarrtor != null)
                 try
                 {
+                    pNarrtor.Exited -= uncheckNarrator;
                     pNarrtor.Kill();
                 }
                 catch { }
@@ -343,6 +403,34 @@ namespace AccessibilityToolbar
             {
                 if ((String)i.Tag == Properties.Settings.Default.culture)
                     i.Checked = true;
+            }
+        }
+
+        private void userGuideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(manual != null && !manual.IsDisposed))
+            {
+                manual = new Manual();
+                manual.TopMost = true;
+                manual.Show();
+            }
+            else
+            {
+                manual.Focus();
+            }
+        }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(aboutus != null && !aboutus.IsDisposed))
+            {
+                aboutus = new Aboutus();
+                aboutus.TopMost = true;
+                aboutus.Show();
+            }
+            else
+            {
+                aboutus.Focus();
             }
         }
     }

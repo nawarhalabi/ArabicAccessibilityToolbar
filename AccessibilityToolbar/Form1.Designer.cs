@@ -129,11 +129,13 @@
             // 
             this.userGuideToolStripMenuItem.Name = "userGuideToolStripMenuItem";
             resources.ApplyResources(this.userGuideToolStripMenuItem, "userGuideToolStripMenuItem");
+            this.userGuideToolStripMenuItem.Click += new System.EventHandler(this.userGuideToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
             resources.ApplyResources(this.aboutUsToolStripMenuItem, "aboutUsToolStripMenuItem");
+            this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // اللغةToolStripMenuItem
             // 

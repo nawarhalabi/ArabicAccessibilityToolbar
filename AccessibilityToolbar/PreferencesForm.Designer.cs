@@ -45,7 +45,6 @@
             this.RulerCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.chooseColourButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.topMostCheckBox = new System.Windows.Forms.CheckBox();
@@ -53,6 +52,7 @@
             this.saveChangesButton = new System.Windows.Forms.Button();
             this.cancelChangesButton = new System.Windows.Forms.Button();
             this.RestoreDefaultsButton = new System.Windows.Forms.Button();
+            this.d = new AccessibilityToolbar.DropDownListColoured();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.magnificationRateTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumericUpDown)).BeginInit();
@@ -214,14 +214,6 @@
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
-            // d
-            // 
-            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.d.FormattingEnabled = true;
-            resources.ApplyResources(this.d, "d");
-            this.d.Name = "d";
-            // 
             // chooseColourButton
             // 
             resources.ApplyResources(this.chooseColourButton, "chooseColourButton");
@@ -269,6 +261,13 @@
             this.RestoreDefaultsButton.Name = "RestoreDefaultsButton";
             this.RestoreDefaultsButton.UseVisualStyleBackColor = true;
             this.RestoreDefaultsButton.Click += new System.EventHandler(this.RestoreDefaultsButton_Click);
+            // 
+            // d
+            // 
+            this.d.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.d.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.d, "d");
+            this.d.Name = "d";
             // 
             // PreferencesForm
             // 

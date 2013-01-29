@@ -15,14 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_05BC0885CD6EB85DACE156C5638977B2"
+        "MsmKey" = "8:_0FA01855709241CA9D67B9B96E0DD039"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_15ED0648AB5314EBA94A344F60264E32"
         "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_0FA01855709241CA9D67B9B96E0DD039"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_15ED0648AB5314EBA94A344F60264E32"
+        "OwnerKey" = "8:_F3563AB81AB54E93A66798A71E32C0D0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -33,25 +39,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2501C5E17CB24B90A0C4CB9C8DF15C58"
-        "OwnerKey" = "8:_9B14B47008AE57E1EB0314AC79B52082"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2501C5E17CB24B90A0C4CB9C8DF15C58"
+        "MsmKey" = "8:_49AA34622FEAD72FA535FD80B55DF5BC"
         "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_434B4B9F72D3F07E442E010C80C1CF51"
-        "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4A94431C1207A8B795FFBB4C0C3AE23E"
+        "MsmKey" = "8:_58456C444A4E19032F0DBAC910030931"
         "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,13 +57,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9B14B47008AE57E1EB0314AC79B52082"
-        "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E3272903C46A4B10940ED831A2835EF2"
+        "MsmKey" = "8:_A119E0962D76D08FCF67644806FCD0B6"
         "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -88,7 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
+        "OwnerKey" = "8:_A119E0962D76D08FCF67644806FCD0B6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,37 +88,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E3272903C46A4B10940ED831A2835EF2"
+        "OwnerKey" = "8:_58456C444A4E19032F0DBAC910030931"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_434B4B9F72D3F07E442E010C80C1CF51"
+        "OwnerKey" = "8:_15ED0648AB5314EBA94A344F60264E32"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4A94431C1207A8B795FFBB4C0C3AE23E"
+        "OwnerKey" = "8:_49AA34622FEAD72FA535FD80B55DF5BC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_05BC0885CD6EB85DACE156C5638977B2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9B14B47008AE57E1EB0314AC79B52082"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2501C5E17CB24B90A0C4CB9C8DF15C58"
+        "OwnerKey" = "8:_E5A68CD4DBA54772A34D4728C2C999AF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -207,6 +183,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -237,20 +226,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_05BC0885CD6EB85DACE156C5638977B2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_15ED0648AB5314EBA94A344F60264E32"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ColorChooserCS, Version=1.0.4707.27451, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Gma.UserActivityMonitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bf62f886773ba68e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_05BC0885CD6EB85DACE156C5638977B2"
+                    "_15ED0648AB5314EBA94A344F60264E32"
                     {
-                    "Name" = "8:ColorChooserCS.dll"
+                    "Name" = "8:Gma.UserActivityMonitor.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ColorChooserCS.dll"
+            "SourcePath" = "8:Gma.UserActivityMonitor.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"
@@ -288,20 +277,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2501C5E17CB24B90A0C4CB9C8DF15C58"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_49AA34622FEAD72FA535FD80B55DF5BC"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Sano.Utility, Version=0.1.0.0, Culture=neutral"
+            "AssemblyAsmDisplayName" = "8:ColorChooserCS, Version=1.0.4737.26296, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2501C5E17CB24B90A0C4CB9C8DF15C58"
+                    "_49AA34622FEAD72FA535FD80B55DF5BC"
                     {
-                    "Name" = "8:Sano.Utility.dll"
+                    "Name" = "8:ColorChooserCS.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Sano.Utility.dll"
+            "SourcePath" = "8:ColorChooserCS.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"
@@ -319,14 +308,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_434B4B9F72D3F07E442E010C80C1CF51"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_58456C444A4E19032F0DBAC910030931"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Karna.Magnification, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f7eb06be57aa6e7f, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_434B4B9F72D3F07E442E010C80C1CF51"
+                    "_58456C444A4E19032F0DBAC910030931"
                     {
                     "Name" = "8:Karna.Magnification.dll"
                     "Attributes" = "3:512"
@@ -350,82 +339,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4A94431C1207A8B795FFBB4C0C3AE23E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A119E0962D76D08FCF67644806FCD0B6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Gma.UserActivityMonitor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:MessageBoxManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4A94431C1207A8B795FFBB4C0C3AE23E"
+                    "_A119E0962D76D08FCF67644806FCD0B6"
                     {
-                    "Name" = "8:Gma.UserActivityMonitor.dll"
+                    "Name" = "8:MessageBoxManager.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Gma.UserActivityMonitor.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9B14B47008AE57E1EB0314AC79B52082"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ColorPicker, Version=0.1.0.0, Culture=neutral"
-                "ScatterAssemblies"
-                {
-                    "_9B14B47008AE57E1EB0314AC79B52082"
-                    {
-                    "Name" = "8:ColorPicker.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ColorPicker.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E3272903C46A4B10940ED831A2835EF2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MouseKeyboardActivityMonitor, Version=3.0.1.9579, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_E3272903C46A4B10940ED831A2835EF2"
-                    {
-                    "Name" = "8:MouseKeyboardActivityMonitor.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MouseKeyboardActivityMonitor.dll"
+            "SourcePath" = "8:MessageBoxManager.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"
@@ -499,15 +426,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:AccessibilityToolbar"
-        "ProductCode" = "8:{F7D89968-532A-40BF-A6FD-EFA627431818}"
-        "PackageCode" = "8:{BF871CF0-9F8E-4B22-9264-6BE0C08FB6DC}"
+        "ProductCode" = "8:{8E84C3BE-1BA4-4238-B2DE-868F37D58415}"
+        "PackageCode" = "8:{9E086D4F-0AB4-4413-AF77-A097A0E53A3A}"
         "UpgradeCode" = "8:{5CCA275B-7954-40DA-AE75-B7DA4343788E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:ATbar"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1155,7 +1082,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E5A68CD4DBA54772A34D4728C2C999AF"
             {
-            "SourcePath" = "8:..\\AccessibilityToolbar\\obj\\x86\\Debug\\AccessibilityToolbar.exe"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8148C89A255D4A15915EC23CF948E431"

@@ -13,10 +13,12 @@ namespace AccessibilityToolbar
     public partial class magnifier : Form
     {
         int defaultStyle;
-
-        public magnifier()
+        bool isLens;
+        public magnifier(bool isLens)
         {
             InitializeComponent();
+            this.isLens = isLens;
+
         }
 
         #region Native Methods
@@ -62,20 +64,9 @@ namespace AccessibilityToolbar
             Properties.Settings.Default.PropertyChanged += new PropertyChangedEventHandler(settingsChanged);
             //Apply settings now for the first time -------------------------------------
             applySettings();
-        }
+            //---------------------------------------------------------------------------
 
-
-        private void settingsChanged(Object sender, PropertyChangedEventArgs args)
-        {
-            applySettings();
-        }
-
-        private void applySettings()
-        {
-            Size = new Size(Properties.Settings.Default.maxMagnifierWidth, Properties.Settings.Default.maxMagnifierHeight);
-            TopMost = Properties.Settings.Default.alwaysOnTop;
-
-            if (Properties.Settings.Default.isLens)//If the magnifier is a lens make click-throughable
+            if (/*Properties.Settings.Default.*/isLens)//If the magnifier is a lens make click-throughable
             {
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 SetWindowLong(this.Handle, -20, defaultStyle | 0x80000 | 0x20);//Layered and transparent
@@ -88,6 +79,18 @@ namespace AccessibilityToolbar
                 //SetWindowLong(Handle, -20, defaultStyle);
                 SetLayeredWindowAttributes(Handle, 0, 255, LayeredWindowAttributeFlags.LWA_ALPHA);
             }
+        }
+
+
+        private void settingsChanged(Object sender, PropertyChangedEventArgs args)
+        {
+            applySettings();
+        }
+
+        private void applySettings()
+        {
+            Size = new Size(Properties.Settings.Default.maxMagnifierWidth, Properties.Settings.Default.maxMagnifierHeight);
+            TopMost = Properties.Settings.Default.alwaysOnTop;
         }
 
         private void magnifier_FormClosing(object sender, FormClosingEventArgs e)

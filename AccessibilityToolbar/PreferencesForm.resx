@@ -397,13 +397,13 @@
     <value>82, 115</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+    <value>71, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>مقدار التكبير:</value>
+    <value>طول المسطرة:</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -538,13 +538,13 @@
     <value>157, 21</value>
   </data>
   <data name="d.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;d.Name" xml:space="preserve">
     <value>d</value>
   </data>
   <data name="&gt;&gt;d.Type" xml:space="preserve">
-    <value>AccessibilityToolbar.DropDownListColoured, AccessibilityToolbar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>AccessibilityToolbar.DropDownListColoured, ATbar-Portable, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;d.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -565,7 +565,7 @@
     <value>7</value>
   </data>
   <data name="chooseColourButton.Text" xml:space="preserve">
-    <value>أختيار لون خاص</value>
+    <value>إختيار لون خاص</value>
   </data>
   <data name="&gt;&gt;chooseColourButton.Name" xml:space="preserve">
     <value>chooseColourButton</value>

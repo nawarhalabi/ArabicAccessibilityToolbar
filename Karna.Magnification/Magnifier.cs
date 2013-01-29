@@ -69,15 +69,11 @@ namespace Karna.Magnification
         void form_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer.Enabled = false;
+            Dispose();
         }
 
         void timer_Tick(object sender, EventArgs e)
         {
-            if (oldIsLens != isLens)// If isLens changes
-            {
-                recreateSelf(); // Recreate the magnifier to apply the change
-                oldIsLens = isLens;
-            }
             UpdateMaginifier();
         }
 

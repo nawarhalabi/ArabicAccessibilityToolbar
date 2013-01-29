@@ -32,7 +32,7 @@ namespace AccessibilityToolbar
             int initialStyle = GetWindowLong(Handle, -20);
             SetWindowLong(Handle, -20, initialStyle | 0x80000 | 0x20);
             //Set the opacity of the overlay to 140 .... any suggestions???--------
-            SetLayeredWindowAttributes(Handle, 0, 140, LayeredWindowAttributeFlags.LWA_ALPHA);  
+            SetLayeredWindowAttributes(Handle, 0, 140, LayeredWindowAttributeFlags.LWA_ALPHA);
         }
 
         private void applySettings()
@@ -48,11 +48,11 @@ namespace AccessibilityToolbar
             BackColor = Color.FromArgb(Properties.Settings.Default.overlayR, Properties.Settings.Default.overlayG, Properties.Settings.Default.overlayB);
             if (Properties.Settings.Default.isRuler)
             {//If ruler is on, hook the mouse moves with onMouseMove event
-                Gma.UserActivityMonitor.HookManager.MouseMove += new MouseEventHandler(onMouseMove);
+                Gma.UserActivityMonitor.HookManager.MouseMove += onMouseMove;
             }
             else
-            {//else unhool it
-               Gma.UserActivityMonitor.HookManager.MouseMove -= new MouseEventHandler(onMouseMove);
+            {//else unhook it
+               Gma.UserActivityMonitor.HookManager.MouseMove -= onMouseMove;
                 //If not the ruler is on cover the whole screen with the overlay
                 Region = new Region(Screen.PrimaryScreen.WorkingArea);//Set the region
                 Invalidate();//force redraw
@@ -125,6 +125,11 @@ namespace AccessibilityToolbar
         private void Overlay_VisibleChanged(object sender, EventArgs e)
         {
             applySettings();
+        }
+
+        private void Overlay_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Gma.UserActivityMonitor.HookManager.MouseMove -= onMouseMove;
         }
     }
 }

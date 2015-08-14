@@ -26,6 +26,7 @@ namespace AccessibilityToolbar
         PreferencesForm preferencesForm = null;
         Manual manual = null;
         Aboutus aboutus = null;
+        int overlayCounter = 0;
 
         public Form1()
         {
@@ -141,20 +142,21 @@ namespace AccessibilityToolbar
 
         private void startContrast()
         {
+            overlayCounter++;
             if (contrastButton.Checked)
             {
-                if (overlay == null || overlay.IsDisposed)
+                overlay.Show();
+                if (overlayCounter == 10)
                 {
-                    overlay = new Overlay();
-                    overlay.FormClosing += uncheckContrast;
+                    overlayCounter = 0;
+                    System.GC.Collect();
                 }
-                overlay.Visible = true;
             }
             else
             {
                 if (overlay != null)
                 {
-                    overlay.Visible = false;
+                    overlay.Hide();
                 }
             }
         }

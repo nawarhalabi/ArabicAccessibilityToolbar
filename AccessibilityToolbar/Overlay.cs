@@ -48,6 +48,7 @@ namespace AccessibilityToolbar
             BackColor = Color.FromArgb(Properties.Settings.Default.overlayR, Properties.Settings.Default.overlayG, Properties.Settings.Default.overlayB);
             if (Properties.Settings.Default.isRuler)
             {//If ruler is on, hook the mouse moves with onMouseMove event
+                Gma.UserActivityMonitor.HookManager.MouseMove -= onMouseMove;
                 Gma.UserActivityMonitor.HookManager.MouseMove += onMouseMove;
             }
             else

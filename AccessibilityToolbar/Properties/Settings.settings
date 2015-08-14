@@ -18,7 +18,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="culture" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en</Value>
+      <Value Profile="(Default)">ar</Value>
     </Setting>
     <Setting Name="invertMagnifierColour" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
